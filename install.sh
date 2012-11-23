@@ -49,6 +49,7 @@ php install.php -- \
 --use_rewrites "yes" \
 --use_secure "no" \
 --secure_base_url "" \
+--skip_url_validation \
 --use_secure_admin "no" \
 --admin_firstname $FIRSTNAME \
 --admin_lastname $LASTNAME \
