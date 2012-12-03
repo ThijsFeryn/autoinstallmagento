@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 read -ep"Database hostname: " DBHOST
 read -ep"Database: " DBNAME
 read -ep"Database username: " DBUSER
