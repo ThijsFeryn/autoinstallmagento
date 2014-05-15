@@ -13,25 +13,25 @@ read -ep"Install sample data? [y/n]: " SAMPLE
 
 if [ "$SAMPLE" == "y" ]
 then
-	wget http://www.magentocommerce.com/downloads/assets/1.8.1.0/magento-1.8.1.0.tar.gz
-	tar -zxvf magento-1.8.1.0.tar.gz
-	wget http://www.magentocommerce.com/downloads/assets/1.6.1.0/magento-sample-data-1.6.1.0.tar.gz
-	tar -zxvf magento-sample-data-1.6.1.0.tar.gz
-	mv magento-sample-data-1.6.1.0/media/* magento/media/
-	mv magento-sample-data-1.6.1.0/magento_sample_data_for_1.6.1.0.sql magento/data.sql
+	wget http://www.magentocommerce.com/downloads/assets/1.9.0.1/magento-1.9.0.1.tar.gz
+	tar -zxvf magento-1.9.0.1.tar.gz
+	wget http://www.magentocommerce.com/downloads/assets/1.9.0.0/magento-sample-data-1.9.0.0.tar.gz
+	tar -zxvf magento-sample-data-1.9.0.0.tar.gz
+	mv magento-sample-data-1.9.0.0/media/* magento/media/
+	mv magento-sample-data-1.9.0.0/magento_sample_data_for_1.9.0.0.sql magento/data.sql
 	mv magento/* magento/.htaccess* .
 	chmod -R o+w media var
 	mysql -h $DBHOST -u $DBUSER -p$DBPASS $DBNAME < data.sql
 	chmod o+w var var/.htaccess app/etc
-	rm -rf magento/ magento-sample-data-1.6.1.0/ magento-1.8.1.0.tar.gz magento-sample-data-1.6.1.0.tar.gz data.sql
+	rm -rf magento/ magento-sample-data-1.9.0.0/ magento-1.9.0.1.tar.gz magento-sample-data-1.9.0.0.tar.gz data.sql
 elif [ "$SAMPLE" == "n" ]
 then
-	wget http://www.magentocommerce.com/downloads/assets/1.8.1.0/magento-1.8.1.0.tar.gz
-	tar -zxvf magento-1.8.1.0.tar.gz
+	wget http://www.magentocommerce.com/downloads/assets/1.9.0.1/magento-1.9.0.1.tar.gz
+	tar -zxvf magento-1.9.0.1.tar.gz
 	mv magento/* magento/.htaccess .
 	chmod -R o+w media var
 	chmod o+w app/etc
-	rm -rf magento/ magento-1.8.1.0.tar.gz	
+	rm -rf magento/ magento-1.9.0.1.tar.gz	
 else
 	echo "Unknown value for sample data. Should be 'y' or 'n', exiting ..."
 	exit
